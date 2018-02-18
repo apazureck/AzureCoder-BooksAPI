@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "BooksAPI": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "odata/Book",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5000/"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "OData.Locations": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "odata/Country",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5000/"
+    }
+  }
+}
