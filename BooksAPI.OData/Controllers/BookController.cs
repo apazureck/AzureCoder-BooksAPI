@@ -15,5 +15,21 @@ namespace BooksAPI.OData.Controllers
         // GET: odata/Book
         [EnableQuery]
         public IQueryable<Book> Get() => context.Books.AsQueryable();
+
+        [HttpPost]
+        public IActionResult AppendTitle([FromODataUri] int key, [FromBody] Bodyclass append)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            return Ok();
+        }
+
+        public class Bodyclass
+        {
+            public string append { get; set; }
+        }
     }
 }

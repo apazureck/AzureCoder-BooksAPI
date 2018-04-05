@@ -11,14 +11,17 @@ namespace BooksAPI
         {
             var builder = new ODataConventionModelBuilder(serviceProvider);
 
-            builder.EntitySet<Book>(nameof(Book))
-                            .EntityType
-                            .Filter() // Allow for the $filter Command
-                            .Count() // Allow for the $count Command
-                            .Expand() // Allow for the $expand Command
-                            .OrderBy() // Allow for the $orderby Command
-                            .Page() // Allow for the $top and $skip Commands
-                            .Select();// Allow for the $select Command; 
+            var es = builder.EntitySet<Book>(nameof(Book));
+            es.EntityType
+            .Filter() // Allow for the $filter Command
+            .Count() // Allow for the $count Command
+            .Expand() // Allow for the $expand Command
+            .OrderBy() // Allow for the $orderby Command
+            .Page() // Allow for the $top and $skip Commands
+            .Select(); // Allow for the $select Command
+
+            es.EntityType.Action("AppendTitle")
+                .Parameter<string>("append");
 
             builder.EntitySet<Author>(nameof(Author))
                             .EntityType
